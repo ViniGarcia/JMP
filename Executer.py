@@ -41,7 +41,3 @@ class Executer:
 
         self.NETWORK.start()
         CLI(self.NETWORK)
-        self.NETWORK.stop()
-
-testV = Validator("Topology.json")
-exe = Executer(testV)
