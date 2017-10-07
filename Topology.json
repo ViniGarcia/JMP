@@ -12,23 +12,19 @@
 			}
 
 		],
-		"SWITCHES":["SWITCH01", "SWITCH02"],
-		"CONTROLLERS":["CONTROLLER01", "CONTROLLER02"],
+		"SWITCHES":[],
+		"CONTROLLERS":["CONTROLLER01"],
 		"OVSSWITCHES":[
 			{
 				"ID":"OVSS01",
 				"CONTROLLER":"CONTROLLER01"
-			},
-			{
-				"ID":"OVSS02",
-				"CONTROLLER":"CONTROLLER02"
 			}
 		]
 	},
 	"CONNECTIONS":[
 		{
 			"IN/OUT":"HOST01",
-			"OUT/IN":"SWITCH01"
+			"OUT/IN":"OVSS01"
 		},
 		{
 			"IN/OUT":"HOST02",

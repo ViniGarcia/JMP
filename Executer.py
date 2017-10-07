@@ -1,4 +1,5 @@
-from mininet import *
+from mininet.net import Mininet
+from mininet.cli import CLI
 from Validator import Validator
 
 class Executer:

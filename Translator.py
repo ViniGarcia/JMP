@@ -21,7 +21,7 @@ class Translator:
 
         llFile = open("LL" + self.TOPOLOGY.ID + ".py", 'w+')
 
-        llFile.write("from mininet import *\n\n")
+        llFile.write("from mininet.node import *\n\n")
         llFile.write("def " + self.TOPOLOGY.ID + "():\n\n")
 
         if self.TOPOLOGY.MNHOSTS is not []:
@@ -37,13 +37,13 @@ class Translator:
 
         if self.TOPOLOGY.MNCONTROLLER is not []:
             for CONTROLLER in self.TOPOLOGY.MNCONTROLLER:
-                llFile.write("  " + CONTROLLER.ID + " = " + "Controller('" + CONTROLLER.ID + ", inNamespace=False')\n")
+                llFile.write("  " + CONTROLLER.ID + " = " + "Controller('" + CONTROLLER.ID + "', inNamespace=False)\n")
                 llFile.write("  " + CONTROLLER.ID + ".start()\n")
             llFile.write("\n")
 
         if self.TOPOLOGY.MNOVSES is not []:
             for OVSES in self.TOPOLOGY.MNOVSES:
-                llFile.write("  " + OVSES.ID + " = " + "OVSSwitch('" + OVSES.ID + ", inNamespace=False')\n")
+                llFile.write("  " + OVSES.ID + " = " + "OVSSwitch('" + OVSES.ID + "', inNamespace=False)\n")
                 llFile.write("  " + OVSES.ID + ".start([" + OVSES.CONTROLLER + "])\n")
             llFile.write("\n")
 
@@ -73,7 +73,9 @@ class Translator:
 
         llFile = open("ML" + self.TOPOLOGY.ID + ".py", 'w+')
 
-        llFile.write("from mininet import *\n\n")
+        llFile.write("from mininet.net import Mininet\n")
+        llFile.write("from mininet.cli import CLI\n\n")
+
         llFile.write("def " + self.TOPOLOGY.ID + "():\n\n")
 
         llFile.write("  NETWORK = Mininet()\n\n")
