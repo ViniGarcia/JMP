@@ -15,6 +15,8 @@ class Translator:
 
         self.STATUS = 0
 
+#------------------------------------------------------------------
+
     def lowLevelTranslation(self):
 
         llFile = open("LL" + self.TOPOLOGY.ID + ".py", 'w+')
@@ -64,6 +66,8 @@ class Translator:
             llFile.write("\n")
 
         llFile.write(self.TOPOLOGY.ID + "()")
+
+#------------------------------------------------------------------
 
     def midLevelTranslation(self):
 
