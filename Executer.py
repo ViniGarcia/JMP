@@ -9,7 +9,10 @@ class Executer:
 
     def __init__(self, TOPOLOGY):
 
-        self.TOPOLOGY = TOPOLOGY
+        if isinstance(TOPOLOGY, Validator):
+            self.TOPOLOGY = TOPOLOGY
+        else:
+            return 
         self.NETWORK = Mininet()
 
         if self.TOPOLOGY.MNHOSTS is not []:
