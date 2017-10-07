@@ -110,10 +110,3 @@ class Translator:
         llFile.write("  NETWORK.stop()\n\n")
 
         llFile.write(self.TOPOLOGY.ID + "()")
-
-testV = Validator("Topology.json")
-print testV.STATUS
-testT = Translator(testV)
-print testT.STATUS
-testT.lowLevelTranslation()
-testT.midLevelTranslation()

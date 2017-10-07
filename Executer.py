@@ -12,7 +12,7 @@ class Executer:
         if isinstance(TOPOLOGY, Validator):
             self.TOPOLOGY = TOPOLOGY
         else:
-            return 
+            return
         self.NETWORK = Mininet()
 
         if self.TOPOLOGY.MNHOSTS is not []:
@@ -42,3 +42,6 @@ class Executer:
         self.NETWORK.start()
         CLI(self.NETWORK)
         self.NETWORK.stop()
+
+testV = Validator("Topology.json")
+exe = Executer(testV)
